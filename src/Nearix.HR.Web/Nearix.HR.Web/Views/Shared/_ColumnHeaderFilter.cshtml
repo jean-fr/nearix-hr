@@ -1,0 +1,15 @@
+﻿@model ColumnHeaderFilterModel
+@{
+    var placeHolder = "Search";
+    var complex = "false";
+    var explainComplex = string.Empty;
+    if (!string.IsNullOrWhiteSpace(this.Model.PlaceHolder))
+    {
+        placeHolder = this.Model.PlaceHolder;
+        complex = "true";
+        explainComplex = "type e.g. >100 or <100 or =100";
+    }
+}
+<th title="@explainComplex">
+    <input title="@explainComplex" type="@this.Model.InputType" data-complex-col="@complex" data-column-name="@this.Model.Name" class="form-control nh-filter nh-col-hdr" placeholder="@placeHolder" />
+</th>

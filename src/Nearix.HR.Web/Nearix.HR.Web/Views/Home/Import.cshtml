@@ -1,0 +1,35 @@
+﻿<div class="card" id="import-card">
+    <h5 class="card-header">Import Employees</h5>
+    <div class="card-body">
+        <h5 class="card-title">First upload the CSV file</h5>
+        <div class="alert alert-info" role="alert">
+            <i>Make sure to use the correct file structure and format. You can download a <a class="alert-link" href="/download/filesample">sample here</a></i>
+        </div>
+
+        <div class="container" id="import-container">
+            <div class="row">
+                <div class="col-sm" id="upload-file-container">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="import-file-input" accept=".csv">
+                            <label class="custom-file-label" for="import-file-input">Choose file</label>
+                        </div>   
+                        <div class="input-group-prepend">
+                            <button class="input-group-text btn btn-primary" id="upload-file-btn">Upload</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm" id="import-file-container">
+                   
+                   <button class="btn btn-primary" id="import-file-btn">Import</button>
+                </div>
+                
+            </div>
+            <div class="row" id="spinner-cont">
+                <img src="~/images/spinner-gif-2.gif" />
+            </div>
+        </div>
+
+    
+    </div>
+</div>

@@ -1,0 +1,102 @@
+﻿<div class="form-inline" id="empl-search-form">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="export-file-btn">Export Result</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="empl-search-input">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="empl-search-btn">Search</button>
+</div>
+
+<section class="content">
+    <div class="box empl-table-container">
+        <div class="box-body">
+            <table class="table table-sm table-responsive table-hover table-striped" id="empl-table">
+                <thead>
+                    <tr>
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "employeeid", DisplayName = "Employee Id", ShortDisplayName = "Empl. Id" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "nameprefix", DisplayName = "Name Prefix", ShortDisplayName = "Name Pref." })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "firstname", DisplayName = "First Name", ShortDisplayName = "First Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "lastname", DisplayName = "Last Name", ShortDisplayName = "Last Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "middleinitial", DisplayName = "Middle Initial", ShortDisplayName = "Mid Init." })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "gender", DisplayName = "Gender", ShortDisplayName = "Gender" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "email", DisplayName = "Email", ShortDisplayName = "Email" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "fathername", DisplayName = "Father Name", ShortDisplayName = "Father Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "mothername", DisplayName = "Mother Name", ShortDisplayName = "Mother Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "mothermaidenname", DisplayName = "Mother Maiden Name", ShortDisplayName = "Mother M. Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "dateofbirth", DisplayName = "Date Of Birth", ShortDisplayName = "Date OB" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "timeofbirth", DisplayName = "Time Of Birth", ShortDisplayName = "Time OB" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "ageinyears", DisplayName = "Age In Years", ShortDisplayName = "Age/Years" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "weightinkgs", DisplayName = "Weight In Kgs", ShortDisplayName = "Wght/Kgs" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "dateofjoining", DisplayName = "Date Of Joining", ShortDisplayName = "Date OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "quarterofjoining", DisplayName = "Quarter Of Joining", ShortDisplayName = "Qtr OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "halfofjoining", DisplayName = "Half Of Joining", ShortDisplayName = "Half OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "yearofjoining", DisplayName = "Year Of Joining", ShortDisplayName = "Yearr OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "monthofjoining", DisplayName = "Month Of Joining", ShortDisplayName = "Mth OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "monthnameofjoining", DisplayName = "Month Name Of Joining", ShortDisplayName = "Mth Name OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "shortmonth", DisplayName = "Short Month", ShortDisplayName = "Short Month" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "dayofjoining", DisplayName = "Day Of Joining", ShortDisplayName = "Day OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "dowofjoining", DisplayName = "Dow Of Joining", ShortDisplayName = "Dow OJ" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "shortdow", DisplayName = "Short Dow", ShortDisplayName = "Short Dow" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "ageincompanyinyears", DisplayName = "Age In Company", ShortDisplayName = "Age In Comp." })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "salary", DisplayName = "Salary", ShortDisplayName = "Salary" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "ssn", DisplayName = "SSN", ShortDisplayName = "SSN" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "lasthike", DisplayName = "Last Hike (%)", ShortDisplayName = "Last Hike(%)" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "phonenumber", DisplayName = "Phone Number", ShortDisplayName = "Phone No." })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "placename", DisplayName = "Place Name", ShortDisplayName = "Plce Name" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "county", DisplayName = "County", ShortDisplayName = "County" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "city", DisplayName = "City", ShortDisplayName = "City" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "state", DisplayName = "State", ShortDisplayName = "State" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "zip", DisplayName = "Zip", ShortDisplayName = "Zip" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "region", DisplayName = "Region", ShortDisplayName = "Region" })
+                        @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "username", DisplayName = "User Name", ShortDisplayName = "User Name" })
+                       @* @await Html.PartialAsync("_ColumnHeader", new ColumnHeaderModel { Name = "password", DisplayName = "Password", ShortDisplayName = "Password" })*@
+                    </tr>
+                    <tr id="nh-tbl-filters">
+                        @{ 
+                            var cs = ">1 or <1 or =1";
+                        }
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "employeeid", InputType = "number" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "nameprefix", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "firstname", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "lastname", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "middleinitial", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "gender", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "email", InputType = "email" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "fathername", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "mothername", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "mothermaidenname", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "dateofbirth", InputType = "date" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "timeofbirth", InputType = "time" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "ageinyears", InputType = "text", PlaceHolder=cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "weightinkgs", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "dateofjoining", InputType = "date" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "quarterofjoining", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "halfofjoining", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "yearofjoining", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "monthofjoining", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "monthnameofjoining", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "shortmonth", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "dayofjoining", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "dowofjoining", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "shortdow", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "ageincompanyinyears", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "salary", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "ssn", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "lasthike", InputType = "text", PlaceHolder = cs })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "phonenumber", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "placename", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "county", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "city", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "state", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "zip", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "region", InputType = "text" })
+                        @await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "username", InputType = "text" })
+                        @*@await Html.PartialAsync("_ColumnHeaderFilter", new ColumnHeaderFilterModel { Name = "password", InputType = "text" })*@
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="box-footer pagination-container"></div>
+
+    </div>
+</section>

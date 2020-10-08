@@ -1,0 +1,52 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nearix.HR.Data", "Nearix.HR.Data\Nearix.HR.Data.csproj", "{C8CF170C-135A-4FF8-B8F7-5A846C59AA98}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nearix.HR.Service", "Nearix.HR.Service\Nearix.HR.Service.csproj", "{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8BE7381A-3A1C-4A41-A206-E238E96B8CCA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{CB09EBAD-4CC8-448B-9C11-C7B2C97D2214}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nearix.HR.Web", "Nearix.HR.Web\Nearix.HR.Web\Nearix.HR.Web.csproj", "{6424F934-B701-4A0D-B90A-0B734CEE749B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nearix.HR.Core", "Nearix.HR.Core\Nearix.HR.Core.csproj", "{7E19539C-202A-4ACE-8FAC-3100A89C9390}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8CF170C-135A-4FF8-B8F7-5A846C59AA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CF170C-135A-4FF8-B8F7-5A846C59AA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CF170C-135A-4FF8-B8F7-5A846C59AA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CF170C-135A-4FF8-B8F7-5A846C59AA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6424F934-B701-4A0D-B90A-0B734CEE749B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6424F934-B701-4A0D-B90A-0B734CEE749B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6424F934-B701-4A0D-B90A-0B734CEE749B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6424F934-B701-4A0D-B90A-0B734CEE749B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E19539C-202A-4ACE-8FAC-3100A89C9390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E19539C-202A-4ACE-8FAC-3100A89C9390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E19539C-202A-4ACE-8FAC-3100A89C9390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E19539C-202A-4ACE-8FAC-3100A89C9390}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C8CF170C-135A-4FF8-B8F7-5A846C59AA98} = {8BE7381A-3A1C-4A41-A206-E238E96B8CCA}
+		{5E8DA5CE-04ED-4D87-9003-3D371B5D1D21} = {8BE7381A-3A1C-4A41-A206-E238E96B8CCA}
+		{6424F934-B701-4A0D-B90A-0B734CEE749B} = {CB09EBAD-4CC8-448B-9C11-C7B2C97D2214}
+		{7E19539C-202A-4ACE-8FAC-3100A89C9390} = {8BE7381A-3A1C-4A41-A206-E238E96B8CCA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21B38E9F-E59B-4728-9757-CEAF82CD0C99}
+	EndGlobalSection
+EndGlobal

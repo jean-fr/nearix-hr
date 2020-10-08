@@ -1,0 +1,159 @@
+﻿<script type="text/template" id="Employees">
+    <%
+    if(Employees.length > 0){    
+    _.each(Employees, function(employee){%>
+    <tr>
+        <td class="truncate-text" title="<%= employee.EmployeeId %>">
+            <%= employee.EmployeeId %>
+        </td>
+        <td class="truncate-text" title="<%= employee.NamePrefix %>">
+            <%= employee.NamePrefix %>
+        </td>
+        <td class="truncate-text" title="<%= employee.FirstName %>">
+            <%= employee.FirstName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.LastName %>">
+           <%= employee.LastName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.MiddleInitial %>">
+            <%= employee.MiddleInitial %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Gender %>">
+            <%= employee.Gender %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Email %>">
+           <%= employee.Email %>
+        </td>
+        <td class="truncate-text" title="<%= employee.FatherName %>">
+            <%= employee.FatherName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.MotherName %>">
+            <%= employee.MotherName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.MotherMaidenName %>">
+            <%= employee.MotherMaidenName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.DateOfBirth %>">
+            <%= employee.DateOfBirth %>
+        </td>
+        <td class="truncate-text" title="<%= employee.TimeOfBirth %>">
+          <%= employee.TimeOfBirth %>
+        </td>
+        <td class="truncate-text" title="<%= employee.AgeInYears %>">
+           <%= employee.AgeInYears %>
+        </td>
+        <td class="truncate-text" title="<%= employee.WeightInKgs %>">
+            <%= employee.WeightInKgs %>
+        </td>
+        <td class="truncate-text" title=" <%= employee.DateOfJoining %>">
+             <%= employee.DateOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.QuarterOfJoining %>">
+             <%= employee.QuarterOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.HalfOfJoining %>">
+             <%= employee.HalfOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.YearOfJoining %>">
+            <%= employee.YearOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.MonthOfJoining %>">
+          <%= employee.MonthOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.MonthNameOfJoining %>">
+             <%= employee.MonthNameOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.ShortMonth %>">
+             <%= employee.ShortMonth %>
+        </td>
+        <td class="truncate-text" title="<%= employee.DayOfJoining %>">
+            <%= employee.DayOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.DowOfJoining %>">
+             <%= employee.DowOfJoining %>
+        </td>
+        <td class="truncate-text" title="<%= employee.ShortDow %>">
+             <%= employee.ShortDow %>
+        </td>
+        <td class="truncate-text" title="<%= employee.AgeInCompanyInYears %>">
+            <%= employee.AgeInCompanyInYears %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Salary %>">
+           <%= employee.Salary %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Ssn %>">
+            <%= employee.Ssn %>
+        </td>
+        <td class="truncate-text" title=" <%= employee.LastHike %>">
+            <%= employee.LastHike %> %
+        </td>
+        <td class="truncate-text" title=" <%= employee.PhoneNumber %>">
+            <%= employee.PhoneNumber %>
+        </td>
+        <td class="truncate-text" title="<%= employee.PlaceName %>">
+            <%= employee.PlaceName %>
+        </td>
+        <td class="truncate-text" title="<%= employee.County %>">
+            <%= employee.County %>
+        </td>
+        <td class="truncate-text" title="<%= employee.City %>">
+             <%= employee.City %>
+        </td>
+        <td class="truncate-text" title="<%= employee.State %>">
+            <%= employee.State %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Zip %>">
+            <%= employee.Zip %>
+        </td>
+        <td class="truncate-text" title="<%= employee.Region %>">
+             <%= employee.Region %>
+        </td>
+        <td class="truncate-text" title="<%= employee.UserName %>">
+            <%= employee.UserName %>
+        </td>
+        <!--<td class="truncate-text" title="<%= employee.Password %>">
+             <%= employee.Password %>
+        </td>-->
+    </tr>    
+    
+    <%})} else {%>
+    <tr class="no-data-row">
+        <td colspan="36">No Data found</td>
+    </tr>    
+    <%} %>
+</script>
+
+<script type="text/template" id="Pagination">
+    <nav aria-label="Page navigation" class="hr-pagination table-responsive" id="emp-pagination">      
+        <ul class="pagination">
+            <%
+            var displayPrev = PageNumber == 1 ? "disabled" : "";
+            var displayNext = PageNumber >= TotalPages ? "disabled" : "";
+            %>
+
+            <li class="<%= displayPrev %> page-item" id="prev-btn">
+                <input type="hidden" value="<%= TotalPages %>" class="ptotal-pages" />
+                <a href="#" aria-label="Previous" data-page="<%=(PageNumber - 1)%>" class="pagination-btn pprev page-link">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <% for (var i = 0; i < TotalPages; i++)
+            {
+            var number = i + 1;
+            var btnClass = number == PageNumber ? "active" : "";
+            %>
+            <li class="<%= btnClass %> page-item">
+                <a class="pagination-btn nbtn page-link" data-page="<%= number %>" href="#">
+                   <%= number %> <span class="sr-only">(current)</span>
+                </a>
+            </li>
+          <%  }%>
+            <li class="<%= displayNext %> page-item" id="next-btn">
+                <a href="#" aria-label="Next" data-page="<%=(PageNumber + 1)%>" class="pagination-btn pnext page-link">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+        
+    </nav>
+</script>

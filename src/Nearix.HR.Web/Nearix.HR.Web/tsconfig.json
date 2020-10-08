@@ -1,0 +1,18 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "target": "ES2015",
+    "outFile": "wwwroot/Scripts/js/nearixhr.js"
+  },
+  "include": [
+    "wwwroot/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "wwwroot/Scripts/typings/*"
+  ]
+}
