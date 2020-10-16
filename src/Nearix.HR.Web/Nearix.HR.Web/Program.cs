@@ -1,3 +1,4 @@
+using System.IO;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,7 @@ namespace Nearix.HR.Web
     {
         public static void Main(string[] args)
         {
+
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -15,10 +17,11 @@ namespace Nearix.HR.Web
             Host.CreateDefaultBuilder(args).UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>().UseKestrel(options =>
+                    webBuilder.UseStartup<Startup>()
+                    .UseKestrel(options =>
                     {
                         options.Limits.MaxRequestBodySize = 104857600; //100MB
-                    });
+                    }).UseContentRoot(Directory.GetCurrentDirectory());
                 });
     }
 }

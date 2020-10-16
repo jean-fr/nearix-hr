@@ -155,7 +155,7 @@ IF (@has_w=1)
       SET @qpref3=' WHERE';
       SET @has_w=1;
     END
-SET @sql+=@qpref3+ ' middle_initial ='+ @middleinitial;
+SET @sql+=@qpref3+ ' middle_initial LIKE ''%'+@middleinitial+'%''';
 END
 
 IF(@gender IS NOT NULL)
@@ -170,7 +170,7 @@ IF (@has_w=1)
       SET @qpref4=' WHERE';
       SET @has_w=1;
     END
-SET @sql+=@qpref4+ ' gender ='+ @gender;
+SET @sql+=@qpref4+ ' gender LIKE ''%'+@gender+'%''';
 END
 
 IF(@email IS NOT NULL)
@@ -245,7 +245,7 @@ IF (@has_w=1)
       SET @qpref9=' WHERE';
       SET @has_w=1;
     END
-SET @sql+=@qpref9+ ' quarter_of_joining ='+@quarterofjoining;
+SET @sql+=@qpref9+ ' quarter_of_joining LIKE ''%'+@quarterofjoining+'%''';
 END
 
 IF(@halfofjoining IS NOT NULL)
@@ -260,7 +260,7 @@ IF (@has_w=1)
       SET @qpref10=' WHERE';
       SET @has_w=1;
     END
-SET @sql+=@qpref10+ ' half_of_joining ='+@halfofjoining;
+SET @sql+=@qpref10+ ' half_of_joining LIKE ''%'+@halfofjoining+'%''';
 END
 
 IF(@shortmonth IS NOT NULL)
